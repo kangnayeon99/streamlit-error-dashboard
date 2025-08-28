@@ -437,16 +437,21 @@ st.set_page_config(page_title="생산/오류 실시간 모니터링 대시보드
 # =========================
 
 @st.cache_data
-def load_data(path="merge1.csv"):
-    """
-    CSV 파일을 로드하고 데이터를 전처리하는 함수.
-    파일이 존재하지 않으면 오류 메시지를 표시하고 None을 반환합니다.
-    """
-    if not os.path.exists(path):
-        st.error(f"오류: '{path}' 파일을 찾을 수 없습니다. 파일 경로를 확인해주세요.")
-        return None, None
+# def load_data(path="merge1.csv"):
+#     """
+#     CSV 파일을 로드하고 데이터를 전처리하는 함수.
+#     파일이 존재하지 않으면 오류 메시지를 표시하고 None을 반환합니다.
+#     """
+#     if not os.path.exists(path):
+#         st.error(f"오류: '{path}' 파일을 찾을 수 없습니다. 파일 경로를 확인해주세요.")
+#         return None, None
         
-    df = pd.read_csv(path)
+#     df = pd.read_csv(path)
+import os
+import pandas as pd
+
+file_path = os.path.join(os.path.dirname(__file__), "merge1.csv")
+merge = pd.read_csv(file_path)
     
     # 날짜/시간 컬럼을 datetime 형식으로 변환
     df["생산일자_dt"] = pd.to_datetime(df["생산일자_dt"], errors='coerce')
