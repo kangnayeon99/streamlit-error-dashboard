@@ -419,7 +419,7 @@
 #                 st.success("시뮬레이션이 완료되었습니다. 초기화 버튼을 눌러 다시 시작하세요.")
 #         else:
 #             st.warning("선택한 작업장/생산라인에 충분한 정상 데이터가 없어 시뮬레이션을 시작할 수 없습니다.")
-
+import os
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -447,8 +447,6 @@ st.set_page_config(page_title="생산/오류 실시간 모니터링 대시보드
 #         return None, None
         
 #     df = pd.read_csv(path)
-import os
-import pandas as pd
 
 file_path = os.path.join(os.path.dirname(__file__), "merge1.csv")
 merge = pd.read_csv(file_path)
