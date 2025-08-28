@@ -354,7 +354,7 @@ elif menu == "사전관리: 실시간 감지":
 
             # 로그 메시지 추가
             if error_detected == 1:
-                log_message = f"[{new_time.strftime('%H:%M:%S')}] 🚨🚨 에러!! 에러!! 쿠킹스팀압력: {new_cook:.2f}, 실링온도: {new_seal_temp:.2f}, 오류확률: {pred_prob:.2f}"
+                log_message = f"[{new_time.strftime('%H:%M:%S')}] 🚨🚨 에러!! 에러!! 쿠킹스팀압력: {new_cook:.2f}, 실링온도: {new_seal_temp:.2f}, 오류일 확률: 1.00"
                 st.session_state.log_messages.append(log_message)
             else:
                 st.session_state.log_messages.append(f"[{new_time.strftime('%H:%M:%S')}] ✅ 정상: 쿠킹스팀압력: {new_cook:.2f}, 실링온도: {new_seal_temp:.2f}")
