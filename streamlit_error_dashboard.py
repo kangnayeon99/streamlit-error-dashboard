@@ -306,7 +306,7 @@ elif menu == "사전관리: 실시간 감지":
             
             # 오류 유발 조건 (20% 확률)
             error_detected = 0
-            if random.random() < 0.20:
+            if random.random() < 0.15:
                 # 쿠킹스팀압력을 23 이하로 강제 설정하여 오류 유발
                 new_cook = 22.5
                 error_detected = 1
